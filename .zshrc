@@ -18,9 +18,12 @@ antigen apply
 
 alias d="npm run dev"
 alias b="npm run build"
+alias vd="vercel dev"
+alias p="npx vite preview"
 alias c="code ."
 alias gp="git push"
 alias gpl="git pull"
+alias gc="npx git-cz"
 
 export NVM_DIR="$HOME/.nvm"
 export MYPRO="$HOME/mypro"

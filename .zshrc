@@ -25,6 +25,26 @@ alias gp="git push"
 alias gpl="git pull"
 alias gc="npx git-cz"
 
+function w() {
+  cd ~/wowjoy/$1
+}
+
+function pro() {
+  cd ~/mypro/$1
+}
+
+function s() {
+  cd ~/opensource/$1
+}
+
+function unproxy {
+  unset ALL_PROXY
+}
+
+function proxy {
+  export ALL_PROXY="http://127.0.0.1:7890"
+}
+
 export NVM_DIR="$HOME/.nvm"
 export MYPRO="$HOME/mypro"
 export WORK="$HOME/work"
@@ -34,3 +54,7 @@ export ALL_PROXY="http://127.0.0.1:7890"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export DENO_INSTALL="/home/yuyin/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export DVM_DIR="/home/yuyin/.dvm"
+export PATH="$DVM_DIR/bin:$PATH"

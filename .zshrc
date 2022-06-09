@@ -13,7 +13,8 @@ antigen bundle z
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-antigen theme romkatv/powerlevel10k
+# antigen theme romkatv/powerlevel10k
+antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
 
 alias d="npm run dev"
@@ -25,16 +26,28 @@ alias gp="git push"
 alias gpl="git pull"
 alias gc="npx git-cz"
 
+function rn() {
+  rm -rf node_modules pnpm-lock.yaml yarn.lock
+}
+
 function w() {
-  cd ~/wowjoy/$1
+  cd ~/work/$1
 }
 
-function pro() {
-  cd ~/mypro/$1
+function i() {
+  cd ~/i/$1
 }
 
-function s() {
-  cd ~/opensource/$1
+function f() {
+  cd ~/forks/$1
+}
+
+function t() {
+  cd ~/test/$1
+}
+
+function clone() {
+  git clone $1
 }
 
 function unproxy {
@@ -46,8 +59,6 @@ function proxy {
 }
 
 export NVM_DIR="$HOME/.nvm"
-export MYPRO="$HOME/mypro"
-export WORK="$HOME/work"
 export ALL_PROXY="http://127.0.0.1:7890"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -58,3 +69,7 @@ export DENO_INSTALL="/home/yuyin/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export DVM_DIR="/home/yuyin/.dvm"
 export PATH="$DVM_DIR/bin:$PATH"
+export NI_CONFIG_FILE="$HOME/.nirc"
+
+export PNPM_HOME="/home/yuyin/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
